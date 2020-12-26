@@ -35,6 +35,8 @@ import java.util.stream.IntStream;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
+ * 网络传输中的数据先写到task的InputGate上
+ *
  * An input gate consumes one or more partitions of a single produced intermediate result.
  *
  * <p>Each intermediate result is partitioned over its producing parallel subtasks; each of these

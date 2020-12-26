@@ -46,6 +46,8 @@ import java.util.function.Consumer;
 import static org.apache.flink.runtime.io.network.netty.NettyMessage.BufferResponse;
 
 /**
+ * Flink写数据的核心类
+ *
  * A nonEmptyReader of partition queues, which listens for channel writability changed
  * events before writing and flushing {@link Buffer} instances.
  */
@@ -193,6 +195,12 @@ class PartitionRequestQueue extends ChannelInboundHandlerAdapter {
 		writeAndFlushNextMessageIfPossible(ctx.channel());
 	}
 
+	/**
+	 * Flink写数据的核心方法
+	 *
+	 * @param channel
+	 * @throws IOException
+	 */
 	private void writeAndFlushNextMessageIfPossible(final Channel channel) throws IOException {
 		if (fatalError || !channel.isWritable()) {
 			return;

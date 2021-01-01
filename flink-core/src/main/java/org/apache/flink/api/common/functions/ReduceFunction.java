@@ -46,7 +46,7 @@ import java.io.Serializable;
  */
 @Public
 @FunctionalInterface
-public interface ReduceFunction<T> extends Function, Serializable {
+public interface ReduceFunction<T> extends Function, Serializable { // 与AggregateFunction的区别是，输入和输出类型是相同的
 
 	/**
 	 * The core method of ReduceFunction, combining two values into one value of the same type.

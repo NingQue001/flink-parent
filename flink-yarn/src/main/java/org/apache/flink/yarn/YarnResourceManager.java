@@ -88,6 +88,7 @@ import java.util.stream.Collectors;
 public class YarnResourceManager extends ActiveResourceManager<YarnWorkerNode>
 		implements AMRMClientAsync.CallbackHandler, NMClientAsync.CallbackHandler {
 
+	// 优先级
 	private static final Priority RM_REQUEST_PRIORITY = Priority.newInstance(1);
 
 	/** YARN container map. Package private for unit test purposes. */

@@ -75,6 +75,10 @@ import java.util.Map;
  * @param <T> The type represented by this type information.
  */
 @Public
+/**
+ * Flink序列化重要的类
+ * Java对象存储密度低，一个boolean占4字节，32bit，boolean数据中占1字节，8bit，而实际上用1 bit就可以表示
+ */
 public abstract class TypeInformation<T> implements Serializable {
 
 	private static final long serialVersionUID = -7742311969684489493L;
